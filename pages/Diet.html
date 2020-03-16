@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ED7229">
+  <title>Life Up</title>
+  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="./diet.css">
+  <link rel="stylesheet" href="../style.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
+  <link href="../fontawesome/css/all.css" rel="stylesheet">
+  <link rel="shortcut icon" href="../images/favicon.png" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body style="background: #fff" onload="init()">
+    
+<header>
+  <h1 style="display: none;">Life Up</h1><a href="../index.html"><img class="logo" src="../images/logo.gif"/></a>
+  <nav>
+    <div id="menu">
+      <ul>
+        <li class="IMC"><a href="./Imc.html"><i class="fas fa-male"></i><span> IMC.fy</span></a></li>
+        <li class="Water"><a href="./Water.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
+        <li class="Sport" style="background: #74BC2D;"><a style="color: rgb(255, 255, 255);" href="./Escada.html"><i class="fas fa-hiking"></i><span> Sport.fy</span></a></li>
+        <li class="Diet" style="background: #fff"><a style="color:#000;" href="./Diet.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div id="resposta"></div>
+
+
+
+<div id="alertas"></div>
+<div id="formulario-quantidade-refs"></div>
+
+<div id="contador-calorias">
+
+</div>
+<div class="btn-categorias">
+<a class="btn-botao cereais" onclick="funcaoBuscarAlimentos(1, 'fas fa-bread-slice', '#FFEC6D')"><i class="fas fa-bread-slice"></i> Cereais e derivados</a>
+<a class="btn-botao verduras" onclick="funcaoBuscarAlimentos(2, 'fas fa-leaf', '#06CD3E')"><i class="fas fa-leaf"></i> Verduras, hortaliças e derivados</a>
+<a class="btn-botao frutas" onclick="funcaoBuscarAlimentos(3, 'fas fa-apple-alt', '#6F4DE9')"><i class="fas fa-apple-alt"></i> Frutas e derivados</a>
+<a class="btn-botao oleos" onclick="funcaoBuscarAlimentos(4, 'fas fa-bacon', '#E97A4D')"><i class="fas fa-bacon"></i> Gorduras e óleos</a>
+<a class="btn-botao pescados" onclick="funcaoBuscarAlimentos(5, 'fas fa-fish', '#E94D99')"><i class="fas fa-fish"></i> Pescados e frutos do mar</a>
+<a class="btn-botao carnes" onclick="funcaoBuscarAlimentos(6, 'fas fa-drumstick-bite', '#CD0621')"><i class="fas fa-drumstick-bite"></i> Carnes e derivados</a>
+<a class="btn-botao leite" onclick="funcaoBuscarAlimentos(7, 'fas fa-cheese', '#ADE94D')"><i class="fas fa-cheese"></i> Leite e derivados</a>
+<a class="btn-botao bebidas" onclick="funcaoBuscarAlimentos(8, 'fas fa-wine-glass-alt', '#4DD1E9')"><i class="fas fa-wine-glass-alt"></i> Bebidas</a>
+<a class="btn-botao ovos" onclick="funcaoBuscarAlimentos(9, 'fas fa-egg', '#E9D34D')"><i class="fas fa-egg"></i> Ovos e derivados</a>
+<a class="btn-botao acucarados" onclick="funcaoBuscarAlimentos(10, 'fas fa-candy-cane', '#CD4E06')"><i class="fas fa-candy-cane"></i> Produtos açucarados</a>
+<a class="btn-botao variados" onclick="funcaoBuscarAlimentos(11, 'fas fa-hotdog', '#4DE9A2')"><i class="fas fa-hotdog"></i> Variados</a>
+<a class="btn-botao industrializados" onclick="funcaoBuscarAlimentos(12, 'fas fa-cookie', '#538AD8')"><i class="fas fa-cookie"></i> Alimentos industrializados</a>
+<a class="btn-botao preparados" onclick="funcaoBuscarAlimentos(13, 'fas fa-hamburger', '#8553D8')"><i class="fas fa-hamburger"></i> Alimentos preparados</a>
+<a class="btn-botao leguminosas" onclick="funcaoBuscarAlimentos(14, 'fas fa-utensil-spoon', '#D853CD')"><i class="fas fa-utensil-spoon"></i> Leguminosas e derivados</a>
+<a class="btn-botao sementes"  onclick="funcaoBuscarAlimentos(15, 'fas fa-seedling', '#00C4BC')"><i class="fas fa-seedling"></i> Nozes e sementes</a>
+</div>
+
+<div id="carrinho">
+  <div class="coluna-carrinho">
+    <div class="carrinho-de-alimentos" onclick="funcaoMostrarAlimentosPreSelecionados();">
+      <a><i id="cart" class="fas fa-shopping-cart"></i> Carrinho</a>
+    </div>
+  </div>
+  <div class="coluna-carrinho-2">
+    <div class="dieta-geral">
+      <a onclick="funcaoExibirAlimentos();" id="botao-dieta-geral">Gerar uma dieta Completa</a>
+    </div>
+    <div class="gerar-dieta">
+      <a onclick="gerarDietaIncompleta();" id="botao2">Gerar dieta Incompleta</a>
+    </div>
+  </div>
+  </div>
+  
+
+<div id="atualiza-carrinho"> </div>
+<div id="pre-selecionados"></div>
+<div id="res"></div>
+<div id="dieta"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="../db.js"></script>
+<script src="../objects.js"></script>
+<script src="./imcfy.js"></script>
+<script src="./diet.js"></script>
+<script>
+    function init(){
+      var db = JSON.parse(localStorage.getItem('db_results_real2'));
+      criarFormQuantRef()
+      var botoes = " ";
+      var diet = document.getElementById('dieta');
+      diet.innerHTML = botoes;
+      var kcal = dietaBalanceada.gerarKcal();
+      dietaBalanceada.criarBlocoKcal(db.results[0].calorias);
+      
+      $('#botao3').click(function(){
+        imcGlobal();
+      });
+      $('#botao2').click(function(){
+        db.results[0].caloriaGeral = 0;
+        for(var k = 0; k < 15; k++){
+          funcaoClassificaCategoria(k);
+        }
+        funcaoDividirPelaQuantidadeDeRefeicoes();
+      });
+    }
+</script>
+<footer>
+  <div id="copyrigth">
+    <a>Copyrigth LIFE ❤ UP</a>
+  </div>
+</footer>
+</body>
+  
+</html>

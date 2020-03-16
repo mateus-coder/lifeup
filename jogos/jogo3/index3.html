@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<title>DinoFood</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body style="background: url(../../images/Escada/background.webp)"  onload="initial()">
+	<div id="jogo" style="display: none; width: 1000px; height: 600px; position: relative; margin: 0 auto; border: solid; background-color: #fff; top: 20px;">
+		<canvas width="1000" height="600"></canvas>
+	</div>
+	
+	<script src="./js/objects/text.js"></script>
+	<script src="./js/keyBoardListener.js"></script>
+	<script src="./js/objects/game.js"></script>
+	<script src="./js/objects/sprites.js"></script>
+	<script src="./js/objects/personagens.js"></script>
+	<script src="./js/Scenes/scenes.js"></script>
+	<script src="./js/colliding/collision.js"></script>
+	<script src="./js/logicToDoNewFrame.js"></script>
+	<script src="./js/statesOfGame.js"></script>
+	<script src="./js/renderScreen.js"></script>
+	<script src="./js/script.js"></script><!--módulo principal-->
+	<script>
+		function initial(){
+			funcaoGame();
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+@font-face{
+    font-family: emulogic;
+    src: url('../../fonts/Emulogic-zrEw.ttf');
+}
+
+#pontuacao{
+    display: none;
+    grid-template-columns: repeat(50, 1fr);
+    grid-template-rows: 1fr;
+    border: 4px dashed green;
+    width: 500px;
+    height: 100px;
+    
+    margin: 0 auto;
+}
+
+.checkedwin{
+    background-color: greenyellow;
+}

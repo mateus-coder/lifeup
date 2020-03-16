@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Up</title>
+  
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab|Fredoka+One&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="./images/favicon.png" />
+  <link href="./fontawesome/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" title="Cool stylesheet" href="./style.css?v=1">
+  <script src="./db.js"></script>
+</head>
+<body onload="init();">
+    <header>
+        <h1 style="display: none;">Life Up</h1><a href="./index.html"><img class="logo" src="./images/logo.gif"/></a>
+        <nav>
+        <div id="menu">
+        <ul>
+          <li class="IMC" style="background: #FF9083"><a style="color:#000" href="./pages/Imc.html"><i class="fas fa-male"></i><span> IMC.fy</span></a></li>
+          <li class="Water"><a href="./pages/Water.html"><i class="fas fa-tint"></i><span> Water.fy</span></a></li>
+          <li class="Sport"><a href="./pages/Escada.html"><i class="fas fa-hiking"></i><span> Sport.fy</span></a></li>
+          <li class="Diet"><a href="./pages/Diet.html"><i class="fas fa-carrot"></i><span> Diet.fy</span></a></li>
+        </ul>
+        </div>
+        </nav>
+    </header>
+
+<div class="sobre-lifeup"> 
+<div class="texto-lifeup">
+  <h1>SOBRE O LIFE UP</h1>
+  <p>Life UP é um projeto de software na web, que promove ferramentas que facilitam a vida do usuário que visa minimizar os danos causados pelo estresse e falta de tempo da vida urbana.</p>
+</div>
+</div>    
+
+<div class="sobre-nos">
+  <h1>EQUIPE</h1>
+  <div class="mateus integrante">
+      <img src="https://pickaface.net/gallery/avatar/88885972_161201_0132_3gzi9.png"/>
+      <h4>Mateus Apolinário</h4>
+      <p>JavaScripter</p>
+  </div>
+  <div class="gregorio integrante">
+      <img src="https://pickaface.net/gallery/avatar/88885972_161201_0132_3gzi9.png"/>
+      <h4>Arthur Gregório</h4>
+      <p>CSSzeiro</p>
+  </div>
+  <div class="andre integrante">
+      <img src="https://pickaface.net/gallery/avatar/88885972_161201_0132_3gzi9.png"/>
+      <h4>André Medeiros</h4>
+      <p>Beta Tester</p>
+  </div>
+</div>
+<div class="sobre-imcfy">
+  <div class="sobre">
+    <h1>IMC.fy</h1>
+    <p>O IMC, ou Índice de Massa Corporal, é uma importante métrica para saber se seu peso está dentro ou fora do ideal. Através da nossa calculadora de IMC, podemos te ajudar a criar uma dieta adequada para ajustar ou manter seu peso!</p>
+    <div class="experimentar"><a href="./pages/Imc.html">CALCULAR!</a></div>
+  </div>
+  <div class="ilustracao">
+    <img src="./images/Home/sprite-IMC.png" />
+  </div>
+</div>
+
+<div class="sobre-waterfy">
+  <div class="sobre">
+    <h1>Water.fy</h1>
+    <p>Que tal descobrir o quanto de água você deve consumir hoje? Water.fy resolve isso para você! Insira seu peso e escolha sua cidade de origem, e calcularemos o quanto de água você deve consumir a partir de agora!</p>
+    <div class="experimentar sobre-waterfy"><a href="./pages/Water.html">DESCOBRIR!</a></div>
+  </div>
+  <div class="ilustracao">
+    <img src="./images/Home/sprite-Water.webp" />
+  </div>
+</div>
+
+<div class="sobre-sportfy">
+  <div class="sobre">
+    <h1>Sport.fy</h1>
+    <p>Vamos nos exercitar! Que tal uma série de exercicios com recompensas divertidas ao final de sequência? Comece agora, mexa-se! </p>
+    <div class="experimentar sobre-sportfy"><a href="./pages/Escada.html">EXERCITAR!</a></div>
+  </div>
+  <div class="ilustracao">
+    <img src="./images/Home/sprite-SPORT.webp" />
+  </div>
+</div>
+
+<div class="sobre-dietfy">
+  <div class="sobre">
+    <h1>Diet.fy</h1>
+    <p>Diet.fy usa os alimentos que você tem em casa para gerar uma dieta saudável! Experimente essa incrível ferramenta! </p>
+    <div class="experimentar sobre-dietfy"><a href="./pages/IMC.html">EXPERIMENTAR!</a></div>
+  </div>
+  <div class="ilustracao">
+    <img src="./images/Home/cenourinha.webp" />
+  </div>
+</div>
+
+
+<footer>
+  <div id="copyrigth">
+    <a>Copyrigth LIFE ❤ UP</a></div>
+</footer>
+<script>
+  function init(){
+    funcaoDb();
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#E6AA33">
+    <title>Life Up</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Mono|Roboto+Slab&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./estilo.css">
+    <link rel="shortcut icon" href="../../images/favicon.png" />
+    <script src="./objects.js"></script>
+</head>
+<body style="background: url(../../images/Escada/background.webp)"  onload="initial()">
+    <section id="pontuacao">
+    </section>
+    <div id="jogo" style="display: none; width: 500px; height: 500px; position: relative; margin: 0 auto; background-color: #fff; top: 50px; margin-bottom: 40px;">
+        <canvas id="canvas1" width="500" height="500"></canvas>
+    </div>
+
+    <script src="../../js/gerais/collision.js"></script>
+    <script src="../../js/gerais/messages.js"></script>
+    <script src="./script.js"></script>
+    <script>
+        function initial(){
+            funcaoGame1();
+        }
+    </script>
+    </body>
+</html>

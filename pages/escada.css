@@ -1,0 +1,133 @@
+@font-face{
+    font-family: emulogic;
+    src: url('../fonts/Emulogic-zrEw.ttf');
+}
+@font-face{
+    src: url('../fonts/Feelin\ Sweet.ttf');
+    font-family: sweet;
+}
+@font-face{
+    src: url('../fonts/PressStart2P-vaV7.ttf');
+    font-family: pressStart;
+}
+
+/*Formatação Escada.fy*/
+
+#mapa-do-tesouro{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-top: -80px;
+    border-radius: 8%;
+}
+#mapa-do-tesouro > div.indice {
+    align-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.indice{
+    font-size: 5em;
+    color: #ff922b;
+}
+#botoes-atividade{
+    display: block;
+    text-align: center;
+    font-size: 5em;
+}
+
+.titulo-atividade{
+    color: #333;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    font-size: 250%;
+    text-align: center;
+    padding: 2%;
+    font-variant-caps: petite-caps;
+}
+.corpo-atividade img {display: block;
+    margin: auto;max-width: 100%}
+
+.sumir{
+    display: none;
+}
+/*formatção cronometro*/
+#crono{
+    display: grid;
+    height: 100px;
+    width: 70%;
+    grid-template-columns: repeat(300, 1fr);
+    grid-template-rows: 1fr;
+    background-color: white;
+    margin: 0 auto;
+    display: none;
+    padding: 2%;
+    border-radius: 25px;
+    
+}
+.crono-text p{
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    }
+#crono div{
+    font-size: 3em;
+}
+
+#crono p{
+    font-family: "Roboto",sans-serif;
+    margin-top: 25%;
+}
+.complete{
+    background-color: blue;
+}
+
+.verde{
+    color: green;
+    opacity: 1;
+    display: inline;
+}
+
+#finalizar{
+    width: 70%;
+    display: block;
+    font-size: 2em;
+    margin: auto;
+    font-variant-caps: petite-caps;}
+
+#comemora {display:block;margin: auto;}
+/*formatação do game*/
+#pontuacao{
+    display: none;
+    grid-template-columns: repeat(50, 1fr);
+    grid-template-rows: 1fr;
+    border: 4px dashed green;
+    width: 500px;
+    height: 100px;
+    
+    margin: 0 auto;
+}
+
+.checkedwin{
+    background-color: greenyellow;
+}
+
+.indice img {
+    width: 90%;
+}
+.personagem{
+    width: 200%;
+}
+#topo{
+    width: 100%;
+}
+#topo > img{
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    display: block;
+    max-width: 100%;
+}
+#comemora img{max-width: 100%;}
